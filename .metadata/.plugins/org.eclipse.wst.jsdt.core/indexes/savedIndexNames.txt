@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+C:\Users\Laptop\Documents\New folder\rentacar-workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3581255486.index
+3748020628.index
+2584814297.index
+1157412913.index
+3504025234.index

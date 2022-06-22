@@ -1,0 +1,92 @@
+package servlets;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.exolab.castor.types.Date;
+import org.python.antlr.base.boolop;
+
+import managers.AutomobilManager;
+import managers.IznajmljivanjeManager;
+import model.Iznajmljivanje;
+
+/**
+ * Servlet implementation class RezervacijaAutomobilaServletPROBA
+ */
+@WebServlet("/RezervacijaAutomobilaServletPROBA")
+public class RezervacijaAutomobilaServletPROBA extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public RezervacijaAutomobilaServletPROBA() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/RezervacijaAutomobilaJspPROBA");
+		rd.forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String idautomobil = request.getParameter("idautomobil");
+		int idAuto = Integer.parseInt(idautomobil);
+		String idiznajmljivanje = request.getParameter("idiznajmljivanje");
+		int idIznajmi = Integer.parseInt(idiznajmljivanje);
+		String marka = request.getParameter("marka");
+		String model = request.getParameter("model");
+		
+		String cenaPoDanu = request.getParameter("cenaPoDanu");
+		int cenaPD = Integer.parseInt(cenaPoDanu);
+		
+		String datum_od = request.getParameter("datum_od");
+		try {
+			Date datumOd = Date.parseDate(datum_od);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String datum_do = request.getParameter("datum_do");
+		try {
+			Date datumDo = Date.parseDate(datum_od);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		AutomobilManager am = new AutomobilManager();
+		boolean iznajmljen = am.zauzeto(idAuto);
+		
+		if(iznajmljen) {
+			request.setAttribute("poruka", "Uspesna rezervacija");
+		}
+		else {
+			request.setAttribute("poruka", "Nije moguce rezervisati auto za unete termine.");
+		}
+		
+		
+		
+		
+		
+		
+	}
+
+}

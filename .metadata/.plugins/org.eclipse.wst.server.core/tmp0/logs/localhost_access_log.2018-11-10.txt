@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [10/Nov/2018:12:57:57 +0100] "GET /rentacarWEB/OslobodiAuto HTTP/1.1" 200 2039
+0:0:0:0:0:0:0:1 - - [10/Nov/2018:12:58:26 +0100] "POST /rentacarWEB/LoginServlet HTTP/1.1" 200 520
+0:0:0:0:0:0:0:1 - - [10/Nov/2018:12:58:53 +0100] "POST /rentacarWEB/LoginServlet HTTP/1.1" 200 520
+0:0:0:0:0:0:0:1 - - [10/Nov/2018:12:59:09 +0100] "GET /rentacarWEB/OslobodiAuto HTTP/1.1" 200 284
+0:0:0:0:0:0:0:1 - - [10/Nov/2018:12:59:54 +0100] "GET /rentacarWEB/LoginServlet HTTP/1.1" 200 2039
+0:0:0:0:0:0:0:1 - - [10/Nov/2018:12:59:57 +0100] "POST /rentacarWEB/LoginServlet HTTP/1.1" 200 2039
+0:0:0:0:0:0:0:1 - - [10/Nov/2018:13:00:01 +0100] "POST /rentacarWEB/LoginServlet HTTP/1.1" 200 2039
+0:0:0:0:0:0:0:1 - - [10/Nov/2018:13:00:03 +0100] "POST /rentacarWEB/LoginServlet HTTP/1.1" 200 2039

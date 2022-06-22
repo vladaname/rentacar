@@ -1,0 +1,5 @@
+127.0.0.1 - - [31/Oct/2018:21:50:33 +0100] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [31/Oct/2018:21:50:50 +0100] "GET /rentacarWEB/OslobodiAuto HTTP/1.1" 200 2454
+0:0:0:0:0:0:0:1 - - [31/Oct/2018:21:51:02 +0100] "POST /rentacarWEB/OslobodiAuto HTTP/1.1" 200 2257
+0:0:0:0:0:0:0:1 - - [31/Oct/2018:21:51:22 +0100] "GET /rentacarWEB/OslobodiAuto HTTP/1.1" 200 2257
+0:0:0:0:0:0:0:1 - - [31/Oct/2018:21:51:43 +0100] "POST /rentacarWEB/OslobodiAuto HTTP/1.1" 200 2054

@@ -1,0 +1,78 @@
+package servlets;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.exolab.castor.types.Date;
+import org.python.antlr.base.boolop;
+
+import managers.AutomobilManager;
+import managers.IznajmljivanjeManager;
+import model.Iznajmljivanje;
+
+/**
+ * Servlet implementation class RezervacijaAutomobilaServletPROBA
+ */
+@WebServlet("/RezervacijaAutomobilaServletPROBA")
+public class RezervacijaAutomobilaServletPROBA extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public RezervacijaAutomobilaServletPROBA() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/RezervacijaAutomobilaJspPROBA");
+		rd.forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+//		String idautomobil = request.getParameter("idautomobil");
+//		int idAuto = Integer.parseInt(idautomobil);
+//		String idiznajmljivanje = request.getParameter("idiznajmljivanje");
+//		int idIznajmi = Integer.parseInt(idiznajmljivanje);
+//		String marka = request.getParameter("marka");
+//		String model = request.getParameter("model");
+//		
+//		String cenaPoDanu = request.getParameter("cenaPoDanu");
+//		int cenaPD = Integer.parseInt(cenaPoDanu);
+		
+		String datum_od = request.getParameter("datum_od");
+		String datum_do = request.getParameter("datum_do");
+		
+		SimpleDateFormat sdp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date datumOd = sdp.parse(datum_od);
+		Date datumDo = sdp.parse(datum_do);
+		
+		IznajmljivanjeManager im = new IznajmljivanjeManager();
+		List<Iznajmljivanje> rent = im.findAllByDateOdDo(datumOd, datumDo);
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

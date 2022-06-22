@@ -1,0 +1,8 @@
+127.0.0.1 - - [20/Oct/2018:15:52:02 +0200] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [20/Oct/2018:15:52:31 +0200] "GET /rentacarWEB/RezervacijaAutomobilaServlet HTTP/1.1" 500 1678
+0:0:0:0:0:0:0:1 - - [20/Oct/2018:15:52:43 +0200] "GET /favicon.ico HTTP/1.1" 404 1085
+127.0.0.1 - - [20/Oct/2018:15:55:22 +0200] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [20/Oct/2018:15:55:26 +0200] "GET /rentacarWEB/RezervacijaAutomobilaServlet HTTP/1.1" 200 988
+0:0:0:0:0:0:0:1 - - [20/Oct/2018:16:30:28 +0200] "GET /rentacarWEB/MainServlet HTTP/1.1" 200 3244
+0:0:0:0:0:0:0:1 - - [20/Oct/2018:16:32:14 +0200] "GET /rentacarWEB/LoginServlet? HTTP/1.1" 200 2043
+0:0:0:0:0:0:0:1 - - [20/Oct/2018:16:34:20 +0200] "POST /rentacarWEB/LoginServlet HTTP/1.1" 200 988

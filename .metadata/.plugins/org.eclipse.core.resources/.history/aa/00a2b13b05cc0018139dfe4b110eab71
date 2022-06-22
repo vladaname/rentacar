@@ -1,0 +1,57 @@
+package managers;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import model.Automobil;
+
+public class AutomobilManager {
+	
+	public static List<Automobil> listAllAutomobil(){
+		EntityManager em = JPAUtil.getEntityManager();
+		return em.createQuery("FROM Automobil a").getResultList();
+	}
+	
+	public static Automobil getOneAutomobil(int idAutomobil) {
+		EntityManager em = JPAUtil.getEntityManager();
+		try {
+			return em.find(Automobil.class, idAutomobil);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public static List<Automobil> findAllByMarka(String marka){
+		EntityManager em = JPAUtil.getEntityManager();
+		try {
+			return em.createQuery("FROM Automobil a WHERE a.marka =:marka").setParameter("marka", marka).getResultList();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+//		List<Automobil> all = listAllAutomobil();
+//		for (Automobil automobil : all) {
+//			System.out.println(automobil.toString());
+//		}
+//		
+//		Automobil auto = getOneAutomobil(1);
+//		System.out.println(auto);
+//		
+	
+		List<Automobil> allMarka = findAllByMarka(opel);
+		for (Automobil automobil : allMarka) {
+			System.out.println(automobil.toString());
+		}	
+		
+		
+	}
+
+}
